@@ -13,7 +13,6 @@ This repository hosts the source code for my personal portfolio website, [tayfun
 * **Responsive Design:** A custom "Accordion" style project list that adapts seamlessly from Mobile to 4K Desktop screens.
 * **Localization (i18n):** Full multi-language support (English/Turkish) using `slang`.
 * **Theming:** Styled with the soothing **Catppuccin** color palette for a modern, developer-focused aesthetic.
-* **Performance:** Optimized for Web (WASM ready) with custom animations and minimal rebuilds using `flutter_hooks`.
 
 ## 🛠 Tech Stack
 
