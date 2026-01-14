@@ -14,7 +14,6 @@ This repository hosts the source code for my personal portfolio website, [tayfun
 * **Localization (i18n):** Full multi-language support (English/Turkish) using `slang`.
 * **Theming:** Styled with the soothing **Catppuccin** color palette for a modern, developer-focused aesthetic.
 * **Performance:** Optimized for Web (WASM ready) with custom animations and minimal rebuilds using `flutter_hooks`.
-* **Self-Hosted:** Fully Dockerized and configured to run behind an Nginx reverse proxy on a Linux VPS.
 
 ## 🛠 Tech Stack
 
