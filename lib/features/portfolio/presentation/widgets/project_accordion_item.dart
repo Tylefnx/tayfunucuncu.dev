@@ -27,7 +27,7 @@ class ProjectAccordionItem extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          // Açıkken daha belirgin, kapalıyken sönük renk
+
           color: isExpanded ? Catppuccin.surface0 : Catppuccin.base,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
@@ -49,10 +49,10 @@ class ProjectAccordionItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // --- HEADER (HER ZAMAN GÖRÜNÜR) ---
+
             Row(
               children: [
-                // Durum Işığı (Linux Process gibi)
+
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
                   width: 8,
@@ -72,7 +72,7 @@ class ProjectAccordionItem extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
 
-                // Proje Başlığı
+
                 Expanded(
                   child: Text(
                     project.title,
@@ -84,9 +84,9 @@ class ProjectAccordionItem extends StatelessWidget {
                   ),
                 ),
 
-                // Ok İkonu (Dönen)
+
                 AnimatedRotation(
-                  turns: isExpanded ? 0.25 : 0, // 90 derece döndür
+                  turns: isExpanded ? 0.25 : 0,
                   duration: const Duration(milliseconds: 300),
                   child: Icon(
                     Icons.arrow_forward_ios_rounded,
@@ -97,12 +97,9 @@ class ProjectAccordionItem extends StatelessWidget {
               ],
             ),
 
-            // --- BODY (GENİŞLEYEN KISIM) ---
-            // AnimatedCrossFade veya SizeTransition kullanılabilir
-            // Basitlik için AnimatedSize kullanmıyoruz,
-            // AnimatedContainer height veremediği için conditional child kullanıyoruz.
+
             AnimatedCrossFade(
-              firstChild: Container(height: 0), // Kapalıyken yok
+              firstChild: Container(height: 0),
               secondChild: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -110,7 +107,7 @@ class ProjectAccordionItem extends StatelessWidget {
                   Divider(color: Catppuccin.surface1.withOpacity(0.5)),
                   const SizedBox(height: 20),
 
-                  // Açıklama
+
                   Text(
                     project.description,
                     style: AppFonts.firaCode(
@@ -121,7 +118,7 @@ class ProjectAccordionItem extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Tech Stack
+
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
@@ -130,7 +127,7 @@ class ProjectAccordionItem extends StatelessWidget {
                         .toList(),
                   ),
 
-                  // Link Butonu (Varsa)
+
                   if (project.link != null) ...[
                     const SizedBox(height: 20),
                     Align(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tayfunucuncu/core/theme/app_fonts.dart';
-import 'package:tayfunucuncu/core/constants/app_layout.dart'; // Merkezi layout sistemi
+import 'package:tayfunucuncu/core/constants/app_layout.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 import 'package:tayfunucuncu/features/about/domain/about_item.dart';
 
@@ -23,7 +23,7 @@ class AboutDetailItem extends StatelessWidget {
           ),
         ),
 
-        // 12 -> AppLayout.spacingSmall (Daha tutarlı bir hiyerarşi)
+
         const SizedBox(height: AppLayout.spacingSmall),
 
         Text(

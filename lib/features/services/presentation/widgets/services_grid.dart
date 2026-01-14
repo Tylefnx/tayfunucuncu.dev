@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/app_layout.dart'; // Layout sistemi
+import '../../../../core/constants/app_layout.dart';
 import '../../../../core/theme/catppuccin.dart';
-import '../../../../i18n/strings.g.dart'; // Çeviri dosyası
+import '../../../../i18n/strings.g.dart';
 import '../../domain/service_item.dart';
 import 'service_card.dart';
 
@@ -10,7 +10,7 @@ class ServicesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Upwork profilindeki uzmanlıklara göre güncellenmiş liste
+
     final List<ServiceItem> services = [
       ServiceItem(
         title: t.services.items.mobile.title,
@@ -43,7 +43,7 @@ class ServicesGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 400,
-        childAspectRatio: 1.6, // Kartları daha uzun yaptık, metinler sığsın
+        childAspectRatio: 1.6,
         crossAxisSpacing: AppLayout.spacingMedium,
         mainAxisSpacing: AppLayout.spacingMedium,
       ),

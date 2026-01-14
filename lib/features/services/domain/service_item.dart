@@ -12,7 +12,7 @@ sealed class ServiceItem with _$ServiceItem {
     @IconDataConverter() required IconData icon,
     @ColorConverter() required Color color,
   }) = _ServiceItem;
-  const ServiceItem._(); // Buradaki isimlendirme hata almamak için kritiktir
+  const ServiceItem._();
 
   factory ServiceItem.fromJson(Map<String, dynamic> json) =>
       _$ServiceItemFromJson(json);

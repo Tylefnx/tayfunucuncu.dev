@@ -9,8 +9,8 @@ sealed class Project with _$Project {
     required String title,
     required String description,
     required List<String> techStack,
-    String? link, // Opsiyonel link
-    String? imageUrl, // İleride görsel eklemek istersen hazır olsun
+    String? link,
+    String? imageUrl,
   }) = _Project;
   const Project._();
 

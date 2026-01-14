@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tayfunucuncu/core/constants/app_layout.dart'; // Layout sistemi eklendi
+import 'package:tayfunucuncu/core/constants/app_layout.dart';
 import 'package:tayfunucuncu/features/contact/domain/social_item.dart';
 import 'package:tayfunucuncu/features/contact/presentation/widgets/social_pill.dart';
 

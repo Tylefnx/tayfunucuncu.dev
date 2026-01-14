@@ -24,20 +24,20 @@ class AppButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        // Boyutlar
+
         minimumSize: const Size(180, buttonHeight),
         padding: const EdgeInsets.symmetric(horizontal: 32),
 
-        // Renkler: Primary ise dolu yeşil, değilse sadece çerçeve
+
         backgroundColor: isPrimary ? Catppuccin.green : Colors.transparent,
         foregroundColor: isPrimary ? Catppuccin.base : Catppuccin.green,
 
-        // Kenarlık: Her zaman var ama Primary'de arka planla aynı renk
+
         side: const BorderSide(color: Catppuccin.green, width: 2),
 
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 
-        // Hata buradaydı: TextStyle'ı netleştiriyoruz
+
         textStyle: AppFonts.firaCode(fontSize: 16, fontWeight: FontWeight.bold),
       ),
       child: Text(label),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tayfunucuncu/core/theme/app_fonts.dart';
-import 'package:tayfunucuncu/core/constants/app_layout.dart'; // Layout sistemi eklendi
+import 'package:tayfunucuncu/core/constants/app_layout.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 
 class ContactTextField extends StatelessWidget {
@@ -51,7 +51,7 @@ class ContactTextField extends StatelessWidget {
             filled: true,
             fillColor: Catppuccin.mantle,
 
-            // 20 -> AppLayout.spacingMedium (İç padding dengesi)
+
             contentPadding: const EdgeInsets.all(AppLayout.spacingMedium),
 
             border: OutlineInputBorder(

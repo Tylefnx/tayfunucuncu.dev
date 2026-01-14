@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tayfunucuncu/core/constants/app_layout.dart';
-import 'package:tayfunucuncu/features/portfolio/presentation/widgets/portfolio_view_body.dart'; // Yeni import
+import 'package:tayfunucuncu/features/portfolio/presentation/widgets/portfolio_view_body.dart';
 
 class PortfolioView extends StatelessWidget {
   const PortfolioView({super.key});

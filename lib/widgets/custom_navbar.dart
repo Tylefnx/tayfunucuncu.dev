@@ -6,7 +6,7 @@ import 'package:tayfunucuncu/i18n/strings.g.dart';
 
 class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
   final int currentIndex;
-  final Function(int) onNavTap; // Tıklanınca ne olacağını dışarıdan alır
+  final Function(int) onNavTap;
 
   const CustomNavbar({
     super.key,
@@ -29,8 +29,8 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
             spacing: 10,
             children: [
               SvgPicture.asset(
-                'assets/icons/T512.svg', // Senin yüksek kaliteli logon
-                height: 30, // Navbar 80px, logo 40px idealdir
+                'assets/icons/T512.svg',
+                height: 30,
               ),
               Text(
                 t.app.title,
@@ -96,7 +96,7 @@ class _NavButtons extends StatelessWidget {
   }
 }
 
-// Sadece bu dosyada kullanılan minik yardımcı widget
+
 class _NavButton extends StatelessWidget {
   final String text;
   final int index;

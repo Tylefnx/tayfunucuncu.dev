@@ -19,14 +19,14 @@ class AboutSectionBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
-      // Column spacing kullanarak SizedBox'ları azalttık
+
       spacing: AppLayout.spacingLarge,
       children: [
         const AboutHeader(),
 
         const Divider(color: Catppuccin.surface1),
 
-        // Liste için ListView.separated yerine Column(spacing) daha performanslıdır (shrinkwrap gerektirmez)
+
         Column(
           spacing: AppLayout.spacingLarge,
           children: details.map((item) => AboutDetailItem(item: item)).toList(),

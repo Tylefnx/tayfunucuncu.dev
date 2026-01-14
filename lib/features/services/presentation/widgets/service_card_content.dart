@@ -20,8 +20,7 @@ class ServiceCardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.center yerine start veya min kullanımı
-      // kartın içindeki scroll ihtimalini daha iyi yönetir.
+
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       spacing: AppLayout.spacingSmall,
@@ -39,7 +38,7 @@ class ServiceCardContent extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        // Flexible veya Expanded kullanımı taşmayı önler
+
         Flexible(
           child: Text(
             desc,
@@ -48,7 +47,7 @@ class ServiceCardContent extends StatelessWidget {
               color: Catppuccin.subtext0,
               fontSize: 12,
             ),
-            // Metin çok uzunsa kırpılmasın, sığdığı kadar görünsün
+
             softWrap: true,
             overflow: TextOverflow.visible,
           ),

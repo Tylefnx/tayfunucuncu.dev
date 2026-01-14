@@ -3,7 +3,7 @@ import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 
 abstract class AppTheme {
   AppTheme._();
-  // Ana renk olarak Yeşili (Green) seçtim, istersen Blue yapabilirsin.
+
   static const Color _primaryColor = Catppuccin.green;
 
   static ThemeData get darkTheme {
@@ -11,22 +11,21 @@ abstract class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
 
-      // --- 1. RENK ŞEMASI (Material 3'ün Kalbi) ---
+
       colorScheme: const ColorScheme.dark(
         primary: _primaryColor,
-        onPrimary: Catppuccin.base, // Buton üzerindeki yazı rengi (koyu olmalı)
+        onPrimary: Catppuccin.base,
         secondary: Catppuccin.blue,
-        surface: Catppuccin.surface0, // Kartların rengi
+        surface: Catppuccin.surface0,
         error: Catppuccin.red,
-        onSurface: Catppuccin.text, // Yüzey üzerindeki yazı rengi
+        onSurface: Catppuccin.text,
       ),
 
-      // --- 2. GENEL ARKAPLAN ---
+
       scaffoldBackgroundColor: Catppuccin.base,
       canvasColor: Catppuccin.base,
 
-      // --- 3. YAZI TİPLERİ (Global Font Ayarı) ---
-      // Tüm metinler varsayılan olarak 'text' renginde ve FiraCode olsun.
+
       textTheme: ThemeData.dark().textTheme.copyWith(
         bodyLarge: TextStyle(
           fontFamily: 'FiraCode',
@@ -54,7 +53,7 @@ abstract class AppTheme {
         ),
       ),
 
-      // --- 4. APP BAR ---
+
       appBarTheme: AppBarTheme(
         backgroundColor: Catppuccin.base,
         elevation: 0,
@@ -68,7 +67,7 @@ abstract class AppTheme {
         iconTheme: const IconThemeData(color: Catppuccin.text),
       ),
 
-      // --- 5. KARTLAR (Card) ---
+
       cardTheme: CardThemeData(
         color: Catppuccin.surface0,
         elevation: 0,

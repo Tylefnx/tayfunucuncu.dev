@@ -9,7 +9,7 @@ class PortfolioTitleGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // Metinler arası sıkı hiyerarşi için spacing ekledik
+
       spacing: 12,
       children: [
         Text(

@@ -70,13 +70,13 @@ class TerminalHistory extends StatelessWidget {
         itemBuilder: (context, index) {
           final line = history[index];
 
-          // Satır rengini tipine göre belirle
+
           Color lineColor = _greenColor;
           if (line.type == LineType.command) lineColor = Colors.white;
           if (line.type == LineType.error) lineColor = _redColor;
 
           return SelectableText(
-            // Kopyalanabilir metin
+
             line.text,
             style: terminalStyle.copyWith(color: lineColor),
           );
@@ -111,7 +111,7 @@ class TerminalShell extends StatelessWidget {
       focusNode: _focusNode,
       style: terminalStyle.copyWith(color: _greenColor),
       cursorColor: _greenColor,
-      cursorWidth: 10, // Blok İmleç
+      cursorWidth: 10,
       decoration: const InputDecoration(
         border: InputBorder.none,
         isDense: true,
@@ -122,10 +122,10 @@ class TerminalShell extends StatelessWidget {
           _focusNode.requestFocus();
           return;
         }
-        // Provider'a komutu gönder
+
         ref.read(terminalProvider.notifier).handleCommand(value);
         _controller.clear();
-        _focusNode.requestFocus(); // Tekrar odaklan
+        _focusNode.requestFocus();
       },
     );
   }

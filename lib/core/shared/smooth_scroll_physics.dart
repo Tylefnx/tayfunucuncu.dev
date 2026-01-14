@@ -20,13 +20,13 @@ class SmoothScrollPhysics extends ScrollPhysics {
 
   @override
   double carriedMomentum(double existingVelocity) {
-    // Daha yumuşak momentum carry
+
     return existingVelocity * 0.85;
   }
 
   @override
   double applyPhysicsToUserOffset(ScrollMetrics position, double offset) {
-    // Kullanıcı input'unu daha yumuşak yap
+
     return offset * 0.95;
   }
 

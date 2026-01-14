@@ -4,7 +4,7 @@ import 'package:tayfunucuncu/core/theme/app_fonts.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 import 'package:tayfunucuncu/features/terminal/application/terminal_notifier.dart';
 import 'package:tayfunucuncu/features/terminal/presentation/terminal_view_components.dart';
-// Eğer components dosyasının adı hala terminal_page_components.dart ise:
+
 
 class TerminalView extends ConsumerStatefulWidget {
   const TerminalView({super.key});
@@ -21,7 +21,7 @@ class _TerminalViewState extends ConsumerState<TerminalView> {
   @override
   void initState() {
     super.initState();
-    // Terminal açıldığında odaklan
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _focusNode.requestFocus();
     });
@@ -39,7 +39,7 @@ class _TerminalViewState extends ConsumerState<TerminalView> {
   Widget build(BuildContext context) {
     final history = ref.watch(terminalProvider);
 
-    // Yeni mesaj gelince aşağı kaydır
+
     ref.listen(terminalProvider, (previous, next) {
       _scrollToBottom();
     });
@@ -50,16 +50,16 @@ class _TerminalViewState extends ConsumerState<TerminalView> {
       color: Catppuccin.text,
     );
 
-    // DİKKAT: Burada Scaffold YOK. Sadece Column var.
+
     return GestureDetector(
       onTap: () => _focusNode.requestFocus(),
       child: Container(
-        color: Colors.transparent, // Tıklamaları yakalamak için
+        color: Colors.transparent,
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Geçmiş Mesajlar (Components dosyasından geliyor)
+
             TerminalHistory(
               scrollController: _scrollController,
               history: history,
@@ -70,7 +70,7 @@ class _TerminalViewState extends ConsumerState<TerminalView> {
 
             const SizedBox(height: 10),
 
-            // Input Alanı ve Butonlar (Components dosyasından geliyor)
+
             TerminalFocus(
               terminalStyle: terminalStyle,
               purpleColor: Catppuccin.mauve,

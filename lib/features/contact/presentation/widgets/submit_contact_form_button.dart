@@ -17,7 +17,7 @@ class SubmitContactForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56, // Standart buton yüksekliği
+      height: 56,
       child: ElevatedButton(
         onPressed: () {
           if (formKey.currentState!.validate()) {
@@ -29,7 +29,7 @@ class SubmitContactForm extends StatelessWidget {
           foregroundColor: Catppuccin.base,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            // Buton radius değerini de standartlaştırdık
+
             borderRadius: BorderRadius.circular(AppLayout.borderRadius / 1.5),
           ),
         ),

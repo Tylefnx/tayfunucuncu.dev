@@ -13,7 +13,7 @@ class ServicesSectionBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
-      // Başlık ve Grid arasındaki boşluğu Column spacing ile yönetiyoruz
+
       spacing: AppLayout.spacingLarge,
       children: [
         Text(

@@ -10,7 +10,7 @@ class PortfolioHero extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // Rozet ile başlık grubu arasındaki geniş boşluk
+
       spacing: AppLayout.spacingMedium,
       children: [
         PortfolioBadge(text: "Selected Works"),

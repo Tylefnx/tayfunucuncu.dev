@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_layout.dart';
 import '../../../../core/theme/catppuccin.dart';
-import 'service_card_content.dart'; // Yeni import
+import 'service_card_content.dart';
 
 class ServiceCard extends StatelessWidget {
   final String title;

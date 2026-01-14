@@ -23,7 +23,7 @@ class SocialPill extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        // SizedBox(width: 10) yerine Row spacing kullanımı (Flutter 3.24+)
+
         spacing: AppLayout.spacingSmall / 1.2,
         children: [
           Icon(item.icon, size: 20, color: Catppuccin.blue),
@@ -34,4 +34,4 @@ class SocialPill extends StatelessWidget {
   }
 }
 
-// Bileşenin içindeki metin bloklarını ayıralım
+

@@ -22,7 +22,7 @@ class ProjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 1. Başlık Alanı
+
           ProjectCardHeader(
             title: project.title,
             hasLink: project.link != null,
@@ -32,14 +32,14 @@ class ProjectCard extends StatelessWidget {
 
           Text(
             project.description,
-            maxLines: 4, // 4 satırdan fazlasını kes (Eşitlik bozulmasın diye)
+            maxLines: 4,
             overflow: TextOverflow.ellipsis,
             style: AppFonts.firaCode(fontSize: 15, color: Catppuccin.subtext0),
           ),
 
           const Spacer(),
 
-          // 3. Tech Stack
+
           Wrap(
             spacing: 8,
             runSpacing: 8,

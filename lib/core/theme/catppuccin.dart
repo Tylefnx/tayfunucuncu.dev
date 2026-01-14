@@ -2,29 +2,26 @@ import 'dart:ui';
 
 abstract class Catppuccin {
   Catppuccin._();
-  // --- BACKGROUNDS (Arka Plan Tonları) ---
-  static const Color base = Color(0xFF1e1e2e); // Ana arka plan
-  static const Color mantle = Color(0xFF181825); // Daha koyu arka plan
-  static const Color crust = Color(0xFF11111b); // En koyu arka plan
+  static const Color base = Color(0xFF1e1e2e);
+  static const Color mantle = Color(0xFF181825);
+  static const Color crust = Color(0xFF11111b);
 
-  // --- SURFACES (Kartlar, Butonlar, Paneller için) ---
   static const Color surface0 = Color(
     0xFF313244,
-  ); // <--- HATA VEREN BU ARKADAŞTI
+  );
   static const Color surface1 = Color(0xFF45475a);
   static const Color surface2 = Color(0xFF585b70);
 
-  // --- TEXT (Yazı Renkleri) ---
-  static const Color text = Color(0xFFcdd6f4); // Ana yazı
-  static const Color subtext0 = Color(0xFFa6adc8); // İkincil yazı
+  static const Color text = Color(0xFFcdd6f4);
+  static const Color subtext0 = Color(0xFFa6adc8);
   static const Color subtext1 = Color(0xFFbac2de);
 
-  // --- OVERLAYS (Silik, Gri tonlar) ---
+
   static const Color overlay0 = Color(0xFF6c7086);
   static const Color overlay1 = Color(0xFF7f849c);
   static const Color overlay2 = Color(0xFF9399b2);
 
-  // --- ACCENTS (Vurgu Renkleri) ---
+
   static const Color blue = Color(0xFF89b4fa);
   static const Color lavender = Color(0xFFb4befe);
   static const Color sapphire = Color(0xFF74c7ec);

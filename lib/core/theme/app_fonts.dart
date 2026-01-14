@@ -16,7 +16,7 @@ class AppFonts {
     );
   }
 
-  // Predefined styles
+
   static TextStyle get body => firaCode(fontSize: 14);
   static TextStyle get caption => firaCode(fontSize: 12);
   static TextStyle get headline => firaCode(

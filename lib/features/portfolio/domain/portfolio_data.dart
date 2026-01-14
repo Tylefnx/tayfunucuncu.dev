@@ -1,15 +1,15 @@
 import 'package:tayfunucuncu/features/portfolio/domain/project.dart';
-import 'package:tayfunucuncu/i18n/strings.g.dart'; // t objesi için gerekli
+import 'package:tayfunucuncu/i18n/strings.g.dart';
 
 class PortfolioData {
   const PortfolioData._();
 
-  // 'get' kullanarak her çağrıldığında o anki dile göre veriyi çekmesini sağlıyoruz
+
   static List<Project> get projects => [
     Project(
       title: t.portfolio.projects.gymlogger.title,
       description: t.portfolio.projects.gymlogger.description,
-      // Tech stack genelde çevrilmez (Özel isim), o yüzden hardcoded kalabilir
+
       techStack: ["Flutter", "Go", "Python", "PostgreSQL"],
       link: t.portfolio.projects.gymlogger.link,
     ),
