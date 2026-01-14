@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:tayfunucuncu/core/theme/app_fonts.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 import 'package:tayfunucuncu/features/portfolio/domain/project.dart';
@@ -135,8 +136,11 @@ class ProjectAccordionItem extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton.icon(
-                        onPressed: () {
-                          // Link açma kodu buraya (url_launcher)
+                        onPressed: () async {
+                          final uri = Uri.parse(project.link!);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         },
                         style: TextButton.styleFrom(
                           foregroundColor: Catppuccin.blue,
