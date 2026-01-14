@@ -1,0 +1,72 @@
+name: tayfunucuncu
+description: "Terminal Portfolio Website"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  slang: ^4.11.2
+  slang_flutter: ^4.11.0
+  flutter_riverpod: ^3.1.0
+  riverpod_annotation: ^4.0.0
+  go_router: ^17.0.1
+  auto_route: ^11.1.0 #
+  intl: any
+  dio: ^5.9.0 #
+
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+
+  scroll_to_index: ^3.0.1
+  hooks_riverpod: ^3.1.0
+  flutter_hooks: ^0.21.3+1
+  flutter_gen: ^5.12.0
+  flutter_svg: ^2.2.3
+  flutter_native_splash: ^2.4.7
+
+dev_dependencies:
+  auto_route_generator: ^10.4.0
+  build_runner: ^2.4.6
+  freezed: ^3.2.3
+  flutter_test:
+    sdk: flutter
+  slang_build_runner: ^4.11.0
+  json_serializable: ^6.10.0
+
+  riverpod_generator: ^4.0.0+1
+
+  # Linter
+  flutter_lints: ^6.0.0
+  lint: ^2.8.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/icons/
+  fonts:
+    - family: FiraCode
+      fonts:
+        - asset: assets/fonts/fira_code/static/FiraCode-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/fira_code/static/FiraCode-Light.ttf
+          weight: 300
+        - asset: assets/fonts/fira_code/static/FiraCode-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/fira_code/static/FiraCode-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/fira_code/static/FiraCode-Bold.ttf
+          weight: 700
+  
+flutter_native_splash:
+  color: "#1e1e2e"
+  image: assets/icons/T512.png  # <-- En yüksek kalite PNG
+  web: true
+  web_image_mode: center        # Resmi germeden ortalar
+  fullscreen: true  
+
