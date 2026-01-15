@@ -19,5 +19,4 @@ This repository hosts the source code for my personal portfolio website, [tayfun
 * **Framework:** Flutter (Web)
 * **State Management:** Riverpod & Flutter Hooks
 * **Localization:** Slang (Type-safe i18n)
-* **Routing:** GoRouter / Navigator 2.0
 * **DevOps:** Docker, Nginx, Linux
