@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:tayfunucuncu/features/portfolio/domain/portfolio_data.dart';
-import 'project_accordion_item.dart';
+import 'package:tayfunucuncu/features/portfolio/presentation/widgets/project_accordion_item.dart';
 
 class ProjectList extends HookWidget {
   const ProjectList({super.key});
@@ -9,7 +9,6 @@ class ProjectList extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final projects = PortfolioData.projects;
-
 
     final expandedIndex = useState<int>(0);
 
@@ -19,7 +18,6 @@ class ProjectList extends HookWidget {
           project: projects[index],
           isExpanded: expandedIndex.value == index,
           onTap: () {
-
             if (expandedIndex.value == index) {
               expandedIndex.value = -1;
             } else {
