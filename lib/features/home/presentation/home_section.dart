@@ -3,6 +3,7 @@ import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 import 'package:tayfunucuncu/features/home/presentation/widgets/home_actions.dart';
 import 'package:tayfunucuncu/features/home/presentation/widgets/home_hero_text.dart';
 import 'package:tayfunucuncu/features/home/presentation/widgets/home_status_pill.dart';
+import 'package:tayfunucuncu/shared/widgets/scrollable_section.dart';
 
 class HomeSection extends StatelessWidget {
   final VoidCallback? onProjectsTap;
@@ -22,7 +23,7 @@ class HomeSection extends StatelessWidget {
       width: double.infinity,
       color: Catppuccin.base,
       child: Center(
-        child: SingleChildScrollView(
+        child: ScrollableSection(
           controller: scrollController,
           padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
           child: ConstrainedBox(

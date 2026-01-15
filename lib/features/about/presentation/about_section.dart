@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 import 'package:tayfunucuncu/features/about/presentation/widgets/about_section_body.dart';
+import 'package:tayfunucuncu/shared/widgets/scrollable_section.dart';
 
 class AboutSection extends HookConsumerWidget {
   final ScrollController scrollController;
@@ -13,7 +14,7 @@ class AboutSection extends HookConsumerWidget {
       width: double.infinity,
       color: Catppuccin.base,
       child: Center(
-        child: SingleChildScrollView(
+        child: ScrollableSection(
           controller: scrollController,
           padding: const EdgeInsets.only(
             top: 100,
