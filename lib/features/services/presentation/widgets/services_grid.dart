@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/app_layout.dart';
-import '../../../../core/theme/catppuccin.dart';
-import '../../../../i18n/strings.g.dart';
-import '../../domain/service_item.dart';
-import 'service_card.dart';
+import 'package:tayfunucuncu/core/theme/catppuccin.dart';
+import 'package:tayfunucuncu/features/services/domain/service_item.dart';
+import 'package:tayfunucuncu/features/services/presentation/widgets/service_card.dart';
+import 'package:tayfunucuncu/i18n/strings.g.dart';
 
 class ServicesGrid extends StatelessWidget {
   const ServicesGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final List<ServiceItem> services = [
       ServiceItem(
         title: t.services.items.mobile.title,
@@ -38,23 +36,42 @@ class ServicesGrid extends StatelessWidget {
       ),
     ];
 
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 400,
-        childAspectRatio: 1.6,
-        crossAxisSpacing: AppLayout.spacingMedium,
-        mainAxisSpacing: AppLayout.spacingMedium,
-      ),
-      itemCount: services.length,
-      itemBuilder: (context, index) {
-        final service = services[index];
-        return ServiceCard(
-          title: service.title,
-          desc: service.desc,
-          icon: service.icon,
-          color: service.color,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double width = constraints.maxWidth;
+
+        // Breakpoints
+        int crossAxisCount = 2;
+        double ratio = 1.4; // Desktop standart
+
+        if (width < 650) {
+          crossAxisCount = 1;
+          ratio =
+              2.4; // Mobilde kartlar yatayda ince/uzun (Pill şeklinde) olsun ki yer kaplamasın
+        } else if (width > 950) {
+          crossAxisCount = 2; // Tablet/Small Web
+          ratio = 1.6;
+        }
+
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: services.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: 24,
+            mainAxisSpacing: 24,
+            childAspectRatio: ratio,
+          ),
+          itemBuilder: (context, index) {
+            final service = services[index];
+            return ServiceCard(
+              title: service.title,
+              desc: service.desc,
+              icon: service.icon,
+              color: service.color,
+            );
+          },
         );
       },
     );

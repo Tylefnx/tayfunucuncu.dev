@@ -4,20 +4,19 @@ import 'package:tayfunucuncu/i18n/strings.g.dart';
 class PortfolioData {
   const PortfolioData._();
 
-
   static List<Project> get projects => [
+    Project(
+      title: t.portfolio.projects.portfolio.title,
+      description: t.portfolio.projects.portfolio.description,
+      techStack: ["Flutter Web", "Docker", "Nginx", "Linux"],
+      link: t.portfolio.projects.portfolio.link,
+    ),
     Project(
       title: t.portfolio.projects.gymlogger.title,
       description: t.portfolio.projects.gymlogger.description,
 
       techStack: ["Flutter", "Go", "Python", "PostgreSQL"],
       link: t.portfolio.projects.gymlogger.link,
-    ),
-    Project(
-      title: t.portfolio.projects.portfolio.title,
-      description: t.portfolio.projects.portfolio.description,
-      techStack: ["Flutter Web", "Docker", "Nginx", "Linux"],
-      link: t.portfolio.projects.portfolio.link,
     ),
     Project(
       title: t.portfolio.projects.budgetbuddy.title,

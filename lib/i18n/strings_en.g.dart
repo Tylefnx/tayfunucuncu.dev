@@ -278,20 +278,14 @@ class TranslationsContactFormEn {
 	/// en: 'Your Name'
 	String get name => 'Your Name';
 
-	/// en: 'e.g. Tayfun Üçüncü'
-	String get namePlaceholder => 'e.g. Tayfun Üçüncü';
-
-	/// en: 'Email Address'
-	String get email => 'Email Address';
-
-	/// en: 'contact@tayfun.dev'
-	String get emailPlaceholder => 'contact@tayfun.dev';
-
-	/// en: 'Your Message'
-	String get message => 'Your Message';
-
-	/// en: 'Tell me about your project and infrastructure needs...'
-	String get messagePlaceholder => 'Tell me about your project and infrastructure needs...';
+	/// en: 'e.g. John Doe'
+	String get namePlaceholder => 'e.g. John Doe';
+	
+	/// en: 'john.doe@example.com'
+	String get emailPlaceholder => 'john.doe@example.com';
+	
+	/// en: 'Tell me about your project...'
+	String get messagePlaceholder => 'Tell me about your project...';
 
 	/// en: 'Send Message'
 	String get submit => 'Send Message';

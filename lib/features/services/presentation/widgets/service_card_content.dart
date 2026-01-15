@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tayfunucuncu/core/theme/app_fonts.dart';
-import 'package:tayfunucuncu/core/constants/app_layout.dart';
 import 'package:tayfunucuncu/core/theme/catppuccin.dart';
 
 class ServiceCardContent extends StatelessWidget {
@@ -19,40 +18,53 @@ class ServiceCardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Kartın dikey alanı çok darsa (mobil veya dar pencere) ikon boyutunu küçült
+        final double adaptiveIconSize = constraints.maxHeight < 120 ? 28 : 36;
+        final double adaptiveFontSize = constraints.maxHeight < 120 ? 14 : 16;
 
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      spacing: AppLayout.spacingSmall,
-      children: [
-        Icon(icon, size: 40, color: color),
-        Padding(
-          padding: const EdgeInsets.only(top: AppLayout.spacingSmall * 0.5),
-          child: Text(
-            title,
-            style: AppFonts.firaCode(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Catppuccin.text,
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // İkon Alanı
+            Icon(icon, size: adaptiveIconSize, color: color),
+            const SizedBox(height: 12),
+
+            // Başlık Alanı - Sığmazsa fontu küçültür
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                style: AppFonts.firaCode(
+                  fontSize: adaptiveFontSize,
+                  fontWeight: FontWeight.bold,
+                  color: Catppuccin.text,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
-            textAlign: TextAlign.center,
-          ),
-        ),
 
-        Flexible(
-          child: Text(
-            desc,
-            textAlign: TextAlign.center,
-            style: AppFonts.firaCode(
-              color: Catppuccin.subtext0,
-              fontSize: 12,
+            const SizedBox(height: 8),
+
+            // Açıklama Alanı - Esnek yapı
+            Flexible(
+              child: Text(
+                desc,
+                textAlign: TextAlign.center,
+                style: AppFonts.firaCode(
+                  color: Catppuccin.subtext0,
+                  fontSize: 12,
+                ),
+                // Ekran daraldığında metni 3 satırda keser, taşmayı önler
+                maxLines: constraints.maxHeight < 150 ? 2 : 4,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-
-            softWrap: true,
-            overflow: TextOverflow.visible,
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 }

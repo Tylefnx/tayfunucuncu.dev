@@ -224,11 +224,9 @@ class _TranslationsContactFormTr implements TranslationsContactFormEn {
 
 	// Translations
 	@override String get name => 'Adınız Soyadınız';
-	@override String get namePlaceholder => 'Örn: Tayfun Üçüncü';
-	@override String get email => 'E-posta Adresiniz';
-	@override String get emailPlaceholder => 'iletisim@tayfun.dev';
-	@override String get message => 'Mesajınız';
-	@override String get messagePlaceholder => 'Projenizden ve altyapı ihtiyaçlarınızdan bahsedin...';
+	@override String get namePlaceholder => 'Örn: John Doe';
+	@override String get emailPlaceholder => 'john.doe@example.com';
+	@override String get messagePlaceholder => 'Projeniz hakkında bilgi verin...';
 	@override String get submit => 'Mesajı Gönder';
 }
 

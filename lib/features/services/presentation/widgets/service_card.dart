@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/app_layout.dart';
-import '../../../../core/theme/catppuccin.dart';
-import 'service_card_content.dart';
+import 'package:tayfunucuncu/core/theme/catppuccin.dart';
+import 'package:tayfunucuncu/features/services/presentation/widgets/service_card_content.dart';
 
 class ServiceCard extends StatelessWidget {
   final String title;
@@ -19,15 +18,28 @@ class ServiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Catppuccin.surface0,
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppLayout.borderRadius),
-        side: BorderSide(color: Catppuccin.surface1.withOpacity(0.5)),
+    return Container(
+      // Geniş ekranda kartların aşırı yayılmasını önlemek için bir iç kısıtlama
+      constraints: const BoxConstraints(maxHeight: 250),
+      decoration: BoxDecoration(
+        color: Catppuccin.surface0.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(24), // Daha yumuşak köşeler
+        border: Border.all(
+          color: Catppuccin.surface1.withValues(alpha: 0.3),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
-child: Padding(
-          padding: const EdgeInsets.all(AppLayout.spacingSmall),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
           child: ServiceCardContent(
             title: title,
             desc: desc,
@@ -35,6 +47,7 @@ child: Padding(
             color: color,
           ),
         ),
+      ),
     );
   }
 }

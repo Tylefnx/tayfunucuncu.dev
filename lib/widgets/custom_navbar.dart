@@ -20,31 +20,57 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Catppuccin.base.withOpacity(0.95),
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            spacing: 10,
-            children: [
-              SvgPicture.asset(
-                'assets/icons/T512.svg',
-                height: 30,
-              ),
-              Text(
-                t.app.title,
-                style: AppFonts.firaCode(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Catppuccin.green,
-                ),
-              ),
-            ],
-          ),
+      color: Catppuccin.base.withValues(alpha: 0.95),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 16,
+      ), // Padding biraz daraltıldı
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // 800px altı ekranlarda "Mobil Modu"na geçiyoruz
+          final bool isMobile = constraints.maxWidth < 800;
 
-          _NavButtons(currentIndex: currentIndex, onNavTap: onNavTap),
-        ],
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Logo ve Başlık
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset('assets/icons/T512.svg', height: 32),
+                  const SizedBox(width: 12),
+                  Text(
+                    t.app.title,
+                    style: AppFonts.firaCode(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Catppuccin.green,
+                    ),
+                  ),
+                ],
+              ),
+
+              // Responsive Menü Elemanları
+              // CustomNavbar içindeki isMobile kontrolünün altındaki IconButton:
+              if (isMobile)
+                Builder(
+                  // Builder ekleyerek doğru context'i yakalıyoruz
+                  builder: (context) => IconButton(
+                    icon: const Icon(
+                      Icons.menu_rounded,
+                      color: Catppuccin.text,
+                      size: 28,
+                    ),
+                    onPressed: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                  ),
+                )
+              else
+                _NavButtons(currentIndex: currentIndex, onNavTap: onNavTap),
+            ],
+          );
+        },
       ),
     );
   }
@@ -58,70 +84,66 @@ class _NavButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Nav buton listesi
+    final List<String> navItems = [
+      t.nav.home,
+      t.nav.about,
+      t.nav.portfolio,
+      t.nav.services,
+      t.nav.contact,
+    ];
+
     return Row(
-      spacing: 15,
-      children: [
-        _NavButton(
-          text: t.nav.home,
-          index: 0,
-          isActive: currentIndex == 0,
-          onTap: () => onNavTap(0),
-        ),
-        _NavButton(
-          text: t.nav.about,
-          index: 1,
-          isActive: currentIndex == 1,
-          onTap: () => onNavTap(1),
-        ),
-        _NavButton(
-          text: t.nav.portfolio,
-          index: 2,
-          isActive: currentIndex == 2,
-          onTap: () => onNavTap(2),
-        ),
-        _NavButton(
-          text: t.nav.services,
-          index: 3,
-          isActive: currentIndex == 3,
-          onTap: () => onNavTap(3),
-        ),
-        _NavButton(
-          text: t.nav.contact,
-          index: 4,
-          isActive: currentIndex == 4,
-          onTap: () => onNavTap(4),
-        ),
-      ],
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(navItems.length, (index) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 8), // Butonlar arası nefes payı
+          child: _NavButton(
+            text: navItems[index],
+            isActive: currentIndex == index,
+            onTap: () => onNavTap(index),
+          ),
+        );
+      }),
     );
   }
 }
 
-
 class _NavButton extends StatelessWidget {
   final String text;
-  final int index;
   final bool isActive;
   final VoidCallback onTap;
 
   const _NavButton({
     required this.text,
-    required this.index,
     required this.isActive,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onTap,
-      style: TextButton.styleFrom(
-        foregroundColor: isActive ? Catppuccin.green : Catppuccin.text,
-        textStyle: AppFonts.firaCode(
-          fontSize: 14,
-          fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: isActive ? Catppuccin.green : Colors.transparent,
+            width: 2,
+          ),
         ),
       ),
-      child: Text(text),
+      child: TextButton(
+        onPressed: onTap,
+        style: TextButton.styleFrom(
+          foregroundColor: isActive ? Catppuccin.green : Catppuccin.text,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          textStyle: AppFonts.firaCode(
+            fontSize: 14,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.w500,
+          ),
+        ),
+        child: Text(text),
+      ),
     );
   }
 }
