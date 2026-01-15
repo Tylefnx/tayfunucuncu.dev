@@ -8,6 +8,6 @@ class ViewProjectsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppButton(label: 'View Projects', onPressed: () {});
+    return AppButton(label: 'View Projects', onPressed: onPressed);
   }
 }
