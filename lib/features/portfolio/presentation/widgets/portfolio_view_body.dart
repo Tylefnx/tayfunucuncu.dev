@@ -7,10 +7,18 @@ class PortfolioViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 40,
-      children: [PortfolioHero(), ProjectList()],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 40,
+        children: [
+          const PortfolioHero(),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 939.3),
+            child: const ProjectList(),
+          ),
+        ],
+      ),
     );
   }
 }
